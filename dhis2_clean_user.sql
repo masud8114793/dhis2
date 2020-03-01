@@ -144,6 +144,6 @@ update trackedentityattribute set userid=50,lastupdatedby=50;
 update validationrule set userid=50,lastupdatedby=50;
 
 delete FROM userteisearchorgunits where userinfoid>100;
-
+delete FROM userapps where userinfoid>100;
 delete FROM userinfo where userinfoid>100;
 
