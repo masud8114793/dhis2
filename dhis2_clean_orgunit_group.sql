@@ -1,0 +1,28 @@
+delete 
+from orgunitgroupmembers
+where orgunitgroupid in
+(
+SELECT orgunitgroupid FROM "public"."orgunitgroup" 
+where uid in ('zYv0CSmgwpb','KBXuym0EOI1','ByXHAtUXXPQ','XpTp1NEJmO1','yZbkNXGGRkO','QJb1CC3382F','zJnrBxdQPPq','mnPY3POGX5X','aQj8Z2Cbo93','J3jVLj4pQ1u','yiuwHYr5HJk','IKLt9fTmUkj','tN5sDI4gN7D','Y90eyJUmILx','sm2lyz3OeN5','LU143hZRFJb','o3SVKoOZ4Cn','uP8usxVyB00','GOrkZFcryBD','FDLOQ78UE9N','YrLd9i7M33h','Z2pRsyqH1zs','dbSgOaDRTxx','YoSeDA9Kd2w','jtZ3I8AZbRv','Ht9ma4vtBjo','UNAirzkKpwc','rM4QAVFraKj','dkaNUuG0deX','mENbr9nfpCu','uU3XutN2XxA','N3vVzi6ZtfL','tk8y2aDu8ES','JE5yHZB381G','cT3gLQ56Nma','bxyXiIrxG4l','es6Hyot1Dui','C5FlGR2oaRU','RIioPQBBIjg','Izv9JrynHcn','YHW2CNpws0o','P5C3oLV1RA2','MQjOhSqASUZ','Rb0dQrmJcbQ','StXoi7dFqXr','aQEnUdbz1cc','wd3tPcpZaWl','LH0eLV6FEeS','ZJoWKrKj6Pt','csnnkT0lrsd','jSIqHe3CSIm','UPzIBlHb67L','QNz4ffHcuJy','J4cpnNDYl0N','UsazlDz0Z61','hF555avTIuX','U9hApMIZq0W','XMck2KYOs1o','PXxHp1E4pqH','u3laW2Kco20','qtJ1S1yfTiM','Ie4EDXdgk6f','wcR7gORmTwB','ssWYlqmnV9s','dQlI3sEG975','I1fAVAKCC2a','QHTAQnErRlP','x0tWzmeYyZy','SpS3BpbbXw9','lOm0re8MZBQ','Ewsle03Pp3x','x2nCIkPzH9w','MhZbSOVjKBg','wSaC5yvWdCO','UdqLRDkRmM8','D9gr7wfUHhc','mojTE0LdP3t','uN7FDNYbRiR','lWnAkkZFJV3','AN78V0QcmX6','YjCNtSOcJpH','ZoK5fPAqltd','u16V9hiJpBR','gL6bJMEb1Tv','dnj6Mqj7Ky7','YCRG9exurZ0','i9tTRctr4Gz','kRYV3VjaVzM','ZHE09oyBVyQ','VoVC5aYHNF1','zWhGKmHj7NG','jf6ypuDaCIC','ZeATSSHctDW')
+)
+
+delete 
+from reporttable_itemorgunitgroups
+where orgunitgroupid in
+(
+SELECT orgunitgroupid FROM "public"."orgunitgroup" 
+where uid in ('zYv0CSmgwpb','KBXuym0EOI1','ByXHAtUXXPQ','XpTp1NEJmO1','yZbkNXGGRkO','QJb1CC3382F','zJnrBxdQPPq','mnPY3POGX5X','aQj8Z2Cbo93','J3jVLj4pQ1u','yiuwHYr5HJk','IKLt9fTmUkj','tN5sDI4gN7D','Y90eyJUmILx','sm2lyz3OeN5','LU143hZRFJb','o3SVKoOZ4Cn','uP8usxVyB00','GOrkZFcryBD','FDLOQ78UE9N','YrLd9i7M33h','Z2pRsyqH1zs','dbSgOaDRTxx','YoSeDA9Kd2w','jtZ3I8AZbRv','Ht9ma4vtBjo','UNAirzkKpwc','rM4QAVFraKj','dkaNUuG0deX','mENbr9nfpCu','uU3XutN2XxA','N3vVzi6ZtfL','tk8y2aDu8ES','JE5yHZB381G','cT3gLQ56Nma','bxyXiIrxG4l','es6Hyot1Dui','C5FlGR2oaRU','RIioPQBBIjg','Izv9JrynHcn','YHW2CNpws0o','P5C3oLV1RA2','MQjOhSqASUZ','Rb0dQrmJcbQ','StXoi7dFqXr','aQEnUdbz1cc','wd3tPcpZaWl','LH0eLV6FEeS','ZJoWKrKj6Pt','csnnkT0lrsd','jSIqHe3CSIm','UPzIBlHb67L','QNz4ffHcuJy','J4cpnNDYl0N','UsazlDz0Z61','hF555avTIuX','U9hApMIZq0W','XMck2KYOs1o','PXxHp1E4pqH','u3laW2Kco20','qtJ1S1yfTiM','Ie4EDXdgk6f','wcR7gORmTwB','ssWYlqmnV9s','dQlI3sEG975','I1fAVAKCC2a','QHTAQnErRlP','x0tWzmeYyZy','SpS3BpbbXw9','lOm0re8MZBQ','Ewsle03Pp3x','x2nCIkPzH9w','MhZbSOVjKBg','wSaC5yvWdCO','UdqLRDkRmM8','D9gr7wfUHhc','mojTE0LdP3t','uN7FDNYbRiR','lWnAkkZFJV3','AN78V0QcmX6','YjCNtSOcJpH','ZoK5fPAqltd','u16V9hiJpBR','gL6bJMEb1Tv','dnj6Mqj7Ky7','YCRG9exurZ0','i9tTRctr4Gz','kRYV3VjaVzM','ZHE09oyBVyQ','VoVC5aYHNF1','zWhGKmHj7NG','jf6ypuDaCIC','ZeATSSHctDW')
+)
+
+delete 
+from mapview_itemorgunitgroups
+where orgunitgroupid in
+(
+SELECT orgunitgroupid FROM "public"."orgunitgroup" 
+where uid in ('zYv0CSmgwpb','KBXuym0EOI1','ByXHAtUXXPQ','XpTp1NEJmO1','yZbkNXGGRkO','QJb1CC3382F','zJnrBxdQPPq','mnPY3POGX5X','aQj8Z2Cbo93','J3jVLj4pQ1u','yiuwHYr5HJk','IKLt9fTmUkj','tN5sDI4gN7D','Y90eyJUmILx','sm2lyz3OeN5','LU143hZRFJb','o3SVKoOZ4Cn','uP8usxVyB00','GOrkZFcryBD','FDLOQ78UE9N','YrLd9i7M33h','Z2pRsyqH1zs','dbSgOaDRTxx','YoSeDA9Kd2w','jtZ3I8AZbRv','Ht9ma4vtBjo','UNAirzkKpwc','rM4QAVFraKj','dkaNUuG0deX','mENbr9nfpCu','uU3XutN2XxA','N3vVzi6ZtfL','tk8y2aDu8ES','JE5yHZB381G','cT3gLQ56Nma','bxyXiIrxG4l','es6Hyot1Dui','C5FlGR2oaRU','RIioPQBBIjg','Izv9JrynHcn','YHW2CNpws0o','P5C3oLV1RA2','MQjOhSqASUZ','Rb0dQrmJcbQ','StXoi7dFqXr','aQEnUdbz1cc','wd3tPcpZaWl','LH0eLV6FEeS','ZJoWKrKj6Pt','csnnkT0lrsd','jSIqHe3CSIm','UPzIBlHb67L','QNz4ffHcuJy','J4cpnNDYl0N','UsazlDz0Z61','hF555avTIuX','U9hApMIZq0W','XMck2KYOs1o','PXxHp1E4pqH','u3laW2Kco20','qtJ1S1yfTiM','Ie4EDXdgk6f','wcR7gORmTwB','ssWYlqmnV9s','dQlI3sEG975','I1fAVAKCC2a','QHTAQnErRlP','x0tWzmeYyZy','SpS3BpbbXw9','lOm0re8MZBQ','Ewsle03Pp3x','x2nCIkPzH9w','MhZbSOVjKBg','wSaC5yvWdCO','UdqLRDkRmM8','D9gr7wfUHhc','mojTE0LdP3t','uN7FDNYbRiR','lWnAkkZFJV3','AN78V0QcmX6','YjCNtSOcJpH','ZoK5fPAqltd','u16V9hiJpBR','gL6bJMEb1Tv','dnj6Mqj7Ky7','YCRG9exurZ0','i9tTRctr4Gz','kRYV3VjaVzM','ZHE09oyBVyQ','VoVC5aYHNF1','zWhGKmHj7NG','jf6ypuDaCIC','ZeATSSHctDW')
+)
+
+
+
+delete FROM "public"."orgunitgroup" 
+where uid in ('zYv0CSmgwpb','KBXuym0EOI1','ByXHAtUXXPQ','XpTp1NEJmO1','yZbkNXGGRkO','QJb1CC3382F','zJnrBxdQPPq','mnPY3POGX5X','aQj8Z2Cbo93','J3jVLj4pQ1u','yiuwHYr5HJk','IKLt9fTmUkj','tN5sDI4gN7D','Y90eyJUmILx','sm2lyz3OeN5','LU143hZRFJb','o3SVKoOZ4Cn','uP8usxVyB00','GOrkZFcryBD','FDLOQ78UE9N','YrLd9i7M33h','Z2pRsyqH1zs','dbSgOaDRTxx','YoSeDA9Kd2w','jtZ3I8AZbRv','Ht9ma4vtBjo','UNAirzkKpwc','rM4QAVFraKj','dkaNUuG0deX','mENbr9nfpCu','uU3XutN2XxA','N3vVzi6ZtfL','tk8y2aDu8ES','JE5yHZB381G','cT3gLQ56Nma','bxyXiIrxG4l','es6Hyot1Dui','C5FlGR2oaRU','RIioPQBBIjg','Izv9JrynHcn','YHW2CNpws0o','P5C3oLV1RA2','MQjOhSqASUZ','Rb0dQrmJcbQ','StXoi7dFqXr','aQEnUdbz1cc','wd3tPcpZaWl','LH0eLV6FEeS','ZJoWKrKj6Pt','csnnkT0lrsd','jSIqHe3CSIm','UPzIBlHb67L','QNz4ffHcuJy','J4cpnNDYl0N','UsazlDz0Z61','hF555avTIuX','U9hApMIZq0W','XMck2KYOs1o','PXxHp1E4pqH','u3laW2Kco20','qtJ1S1yfTiM','Ie4EDXdgk6f','wcR7gORmTwB','ssWYlqmnV9s','dQlI3sEG975','I1fAVAKCC2a','QHTAQnErRlP','x0tWzmeYyZy','SpS3BpbbXw9','lOm0re8MZBQ','Ewsle03Pp3x','x2nCIkPzH9w','MhZbSOVjKBg','wSaC5yvWdCO','UdqLRDkRmM8','D9gr7wfUHhc','mojTE0LdP3t','uN7FDNYbRiR','lWnAkkZFJV3','AN78V0QcmX6','YjCNtSOcJpH','ZoK5fPAqltd','u16V9hiJpBR','gL6bJMEb1Tv','dnj6Mqj7Ky7','YCRG9exurZ0','i9tTRctr4Gz','kRYV3VjaVzM','ZHE09oyBVyQ','VoVC5aYHNF1','zWhGKmHj7NG','jf6ypuDaCIC','ZeATSSHctDW')
