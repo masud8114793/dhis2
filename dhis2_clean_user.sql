@@ -51,157 +51,56 @@ IN (SELECT	dashboardid	FROM	dashboard	WHERE	userid > 100);
 delete FROM dashboard where userid>100;
 delete FROM dashboarditem where lastupdatedby>100;
 
-DELETE
-	from mapmapviews
-WHERE
-	mapmapviews.mapid IN (
-		SELECT
-			mapid
-		FROM
-			"map"
-		WHERE
-			userid > 100
-);
-DELETE
-	from dashboarditem
-WHERE
-	dashboarditem.mapid IN (
-		SELECT
-			mapid
-		FROM
-			"map"
-		WHERE
-			userid > 100
-);
+DELETE	from mapmapviews	WHERE	mapmapviews.mapid 
+IN (SELECT	mapid	FROM	"map"	WHERE	userid > 100);
+
+DELETE	from dashboarditem	WHERE	dashboarditem.mapid 
+IN (SELECT	mapid	FROM	"map"	WHERE	userid > 100);
+
 delete FROM "map" where userid>100;
 
-DELETE
-	from orgunitgroupmembers
-WHERE
-	orgunitgroupmembers.orgunitgroupid IN (
-		SELECT
-			orgunitgroupid
-		FROM
-			orgunitgroup
-		WHERE
-			userid > 100
-);
-DELETE
-	from reporttable_itemorgunitgroups
-WHERE
-	reporttable_itemorgunitgroups.orgunitgroupid IN (
-		SELECT
-			orgunitgroupid
-		FROM
-			orgunitgroup
-		WHERE
-			userid > 100
-);
+DELETE	from orgunitgroupmembers	WHERE	orgunitgroupmembers.orgunitgroupid 
+IN (SELECT	orgunitgroupid	FROM	orgunitgroup	WHERE	userid > 100);
+
+DELETE	from reporttable_itemorgunitgroups	WHERE	reporttable_itemorgunitgroups.orgunitgroupid 
+IN (SELECT	orgunitgroupid	FROM	orgunitgroup	WHERE	userid > 100);
+
 delete FROM orgunitgroupmembers ;
 delete FROM orgunitgroupsetmembers ;
 delete FROM reporttable_itemorgunitgroups;
 delete FROM orgunitgroup;
-DELETE
-	from dashboarditem
-WHERE
-	dashboarditem.reporttable IN (
-		SELECT
-			reporttable.reporttableid
-		FROM
-			reporttable
-		WHERE
-			userid > 100
-);
-DELETE
-	from reporttable_filters
-WHERE
-	reporttable_filters.reporttableid IN (
-		SELECT
-			reporttable.reporttableid
-		FROM
-			reporttable
-		WHERE
-			userid > 100
-);
-DELETE
-	from reporttable_organisationunits
-WHERE
-	reporttable_organisationunits.reporttableid IN (
-		SELECT
-			reporttable.reporttableid
-		FROM
-			reporttable
-		WHERE
-			userid > 100
-);
-DELETE
-	from reporttable_rows
-WHERE
-	reporttable_rows.reporttableid IN (
-		SELECT
-			reporttable.reporttableid
-		FROM
-			reporttable
-		WHERE
-			userid > 100
-);
-DELETE
-	from reporttable_columns
-WHERE
-	reporttable_columns.reporttableid IN (
-		SELECT
-			reporttable.reporttableid
-		FROM
-			reporttable
-		WHERE
-			userid > 100
-);
-DELETE
-	from reporttable_datadimensionitems
-WHERE
-	reporttable_datadimensionitems.reporttableid IN (
-		SELECT
-			reporttable.reporttableid
-		FROM
-			reporttable
-		WHERE
-			userid > 100
-);
-DELETE
-	from reporttable_orgunitlevels
-WHERE
-	reporttable_orgunitlevels.reporttableid IN (
-		SELECT
-			reporttable.reporttableid
-		FROM
-			reporttable
-		WHERE
-			userid > 100
-);
-DELETE
-	from reporttable_periods
-WHERE
-	reporttable_periods.reporttableid IN (
-		SELECT
-			reporttable.reporttableid
-		FROM
-			reporttable
-		WHERE
-			userid > 100
-);
+
+DELETE	from dashboarditem	WHERE	dashboarditem.reporttable 
+IN (SELECT	reporttable.reporttableid	FROM	reporttable	WHERE	userid > 100);
+
+DELETE	from reporttable_filters	WHERE	reporttable_filters.reporttableid IN (
+		SELECT	reporttable.reporttableid	FROM	reporttable	WHERE	userid > 100);
+		
+DELETE	from reporttable_organisationunits	WHERE	reporttable_organisationunits.reporttableid 
+IN (SELECT	reporttable.reporttableid	FROM	reporttable	WHERE	userid > 100);
+
+DELETE	from reporttable_rows	WHERE	reporttable_rows.reporttableid 
+IN (SELECT	reporttable.reporttableid	FROM	reporttable	WHERE	userid > 100);
+
+
+DELETE	from reporttable_columns	WHERE	reporttable_columns.reporttableid 
+IN (SELECT	reporttable.reporttableid	FROM	reporttable		WHERE	userid > 100);
+
+DELETE	from reporttable_datadimensionitems	WHERE	reporttable_datadimensionitems.reporttableid 
+IN (SELECT	reporttable.reporttableid	FROM	reporttable	WHERE	userid > 100);
+
+DELETE	from reporttable_orgunitlevels	WHERE	reporttable_orgunitlevels.reporttableid 
+IN (SELECT	reporttable.reporttableid	FROM	reporttable	WHERE	userid > 100);
+
+DELETE	from reporttable_periods	WHERE	reporttable_periods.reporttableid 
+IN (SELECT	reporttable.reporttableid	FROM	reporttable		WHERE	userid > 100);
+
 delete FROM reporttable where userid>100;
 delete FROM userkeyjsonvalue where userid>100;
-DELETE
-	from messageconversation_usermessages
-WHERE
-	messageconversation_usermessages.usermessageid IN (
-		SELECT
-			usermessage.usermessageid
-		FROM
-			usermessage
-		WHERE
-			userid > 100
-);
+
+DELETE	from messageconversation_usermessages	WHERE	messageconversation_usermessages.usermessageid 
+IN (SELECT	usermessage.usermessageid	FROM	usermessage	WHERE	userid > 100);
+
 delete FROM usermessage where userid>100;
 delete FROM dashboarditem_users where userid>100;
 
@@ -239,7 +138,7 @@ update programstage set userid=50,lastupdatedby=50;
 update "section" set lastupdatedby=50;
 update usergroup set userid=50,lastupdatedby=50;
 update validationrule set lastupdatedby=50;
-update message set userid=50
+update message set userid=50;
 update messageconversation set userid=50,lastsenderid=50;
 update trackedentityattribute set userid=50,lastupdatedby=50;
 update validationrule set userid=50,lastupdatedby=50;
