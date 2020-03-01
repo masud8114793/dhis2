@@ -1,297 +1,209 @@
-delete FROM "public".userrolemembers where userid>100;
-delete FROM "public".previouspasswords where userid>100;
-delete FROM "public"."users" where userid>100;
-delete FROM "public".usergroupmembers where userid>100;
-delete FROM "public".usermembership where userinfoid>100;
-delete FROM "public".userdatavieworgunits where userinfoid>100;
-delete FROM "public".usersetting where userinfoid>100;
-delete FROM "public"."programstageuseraccesses" where useraccessid>100;
+delete FROM userrolemembers where userid>100;
+delete FROM previouspasswords where userid>100;
+delete FROM "users" where userid>100;
+delete FROM usergroupmembers where userid>100;
+delete FROM usermembership where userinfoid>100;
+delete FROM userdatavieworgunits where userinfoid>100;
+delete FROM usersetting where userinfoid>100;
+delete FROM "programstageuseraccesses" where useraccessid>100;
+
+DELETE FROM programstageuseraccesses WHERE programstageuseraccesses.useraccessid IN (SELECT useraccessid FROM useraccess WHERE	userid > 100);
+
+DELETE FROM dashboarduseraccesses WHERE	dashboarduseraccesses.useraccessid IN (	SELECT	useraccessid	FROM useraccess	WHERE userid > 100	);
+
+DELETE FROM programuseraccesses WHERE	programuseraccesses.useraccessid IN (	SELECT	useraccessid	FROM useraccess	WHERE userid > 100	);
+
+DELETE FROM datasetuseraccesses WHERE	datasetuseraccesses.useraccessid IN (	SELECT	useraccessid	FROM useraccess	WHERE userid > 100	);
+
+delete FROM useraccess where userid>100;
+
+DELETE FROM chart_datadimensionitems WHERE	chart_datadimensionitems.chartid 
+IN (	SELECT	chartid	FROM chart	WHERE userid > 100	);
+
+
+DELETE FROM chart_organisationunits WHERE chart_organisationunits.chartid 
+IN (SELECT chartid FROM chart	WHERE userid > 100);
+
+DELETE	FROM	chart_filters	WHERE	chart_filters.chartid 
+IN (SELECT	chartid	FROM	chart	WHERE	userid > 100);
+
+DELETE	FROM	chart_periods	WHERE	chart_periods.chartid 
+IN (SELECT	chartid	FROM	chart	WHERE	userid > 100);
+
+
+DELETE	FROM	dashboard_items	where dashboarditemid in
+(select dashboarditemid	from dashboarditem	WHERE	
+dashboarditem.chartid IN (SELECT	chartid	FROM	chart
+WHERE	userid > 100));
+
+
+DELETE	from dashboarditem	WHERE	dashboarditem.chartid 
+IN (SELECT	chartid	FROM	chart	WHERE	userid > 100);
+
+DELETE	FROM chart_orgunitlevels WHERE	chart_orgunitlevels.chartid 
+IN (SELECT	chartid	FROM	chart	WHERE	userid > 100);
+
+delete FROM chart where userid>100;
+
+DELETE	from dashboard_items	WHERE	dashboard_items.dashboardid 
+IN (SELECT	dashboardid	FROM	dashboard	WHERE	userid > 100);
+
+delete FROM dashboard where userid>100;
+delete FROM dashboarditem where lastupdatedby>100;
 
 DELETE
-FROM
-	"public".programstageuseraccesses
-WHERE
-	programstageuseraccesses.useraccessid IN (
-		SELECT
-			useraccessid
-		FROM
-			"public".useraccess
-		WHERE
-			userid > 100
-	);
-
-
-DELETE
-FROM
-	"public".dashboarduseraccesses
-WHERE
-	dashboarduseraccesses.useraccessid IN (
-		SELECT
-			useraccessid
-		FROM
-			"public".useraccess
-		WHERE
-			userid > 100
-	);
-delete FROM "public".useraccess where userid>100;
-
-DELETE
-FROM
-	"public".chart_datadimensionitems
-WHERE
-	chart_datadimensionitems.chartid IN (
-		SELECT
-			chartid
-		FROM
-			"public".chart
-		WHERE
-			userid > 100
-	);
-DELETE
-FROM
-	"public".chart_organisationunits
-WHERE
-	chart_organisationunits.chartid IN (
-		SELECT
-			chartid
-		FROM
-			"public".chart
-		WHERE
-			userid > 100
-	);
-DELETE
-FROM
-	"public".chart_filters
-WHERE
-	chart_filters.chartid IN (
-		SELECT
-			chartid
-		FROM
-			"public".chart
-		WHERE
-			userid > 100
-	);
-DELETE
-FROM
-	"public".chart_periods
-WHERE
-	chart_periods.chartid IN (
-		SELECT
-			chartid
-		FROM
-			"public".chart
-		WHERE
-			userid > 100
-	);
-DELETE
-FROM
-dashboard_items
-where 
-dashboarditemid in
-(
-select dashboarditemid
-	from "public".dashboarditem
-WHERE
-	dashboarditem.chartid IN (
-		SELECT
-			chartid
-		FROM
-			"public".chart
-		WHERE
-			userid > 100
-	)
-);
-DELETE
-	from "public".dashboarditem
-WHERE
-	dashboarditem.chartid IN (
-		SELECT
-			chartid
-		FROM
-			"public".chart
-		WHERE
-			userid > 100
-);
-DELETE
-	from "public".chart_orgunitlevels
-WHERE
-	chart_orgunitlevels.chartid IN (
-		SELECT
-			chartid
-		FROM
-			"public".chart
-		WHERE
-			userid > 100
-);
-
-delete FROM "public".chart where userid>100;
-DELETE
-	from "public".dashboard_items
-WHERE
-	dashboard_items.dashboardid IN (
-		SELECT
-			dashboardid
-		FROM
-			"public".dashboard
-		WHERE
-			userid > 100
-);
-
-delete FROM "public".dashboard where userid>100;
-delete FROM "public".dashboarditem where lastupdatedby>100;
-DELETE
-	from "public".mapmapviews
+	from mapmapviews
 WHERE
 	mapmapviews.mapid IN (
 		SELECT
 			mapid
 		FROM
-			"public"."map"
+			"map"
 		WHERE
 			userid > 100
 );
 DELETE
-	from "public".dashboarditem
+	from dashboarditem
 WHERE
 	dashboarditem.mapid IN (
 		SELECT
 			mapid
 		FROM
-			"public"."map"
+			"map"
 		WHERE
 			userid > 100
 );
-delete FROM "public"."map" where userid>100;
+delete FROM "map" where userid>100;
 
 DELETE
-	from "public".orgunitgroupmembers
+	from orgunitgroupmembers
 WHERE
 	orgunitgroupmembers.orgunitgroupid IN (
 		SELECT
 			orgunitgroupid
 		FROM
-			"public".orgunitgroup
+			orgunitgroup
 		WHERE
 			userid > 100
 );
 DELETE
-	from "public".reporttable_itemorgunitgroups
+	from reporttable_itemorgunitgroups
 WHERE
 	reporttable_itemorgunitgroups.orgunitgroupid IN (
 		SELECT
 			orgunitgroupid
 		FROM
-			"public".orgunitgroup
+			orgunitgroup
 		WHERE
 			userid > 100
 );
-delete FROM "public".orgunitgroupmembers ;
-delete FROM "public".orgunitgroupsetmembers ;
-delete FROM "public".reporttable_itemorgunitgroups;
-delete FROM "public".orgunitgroup;
+delete FROM orgunitgroupmembers ;
+delete FROM orgunitgroupsetmembers ;
+delete FROM reporttable_itemorgunitgroups;
+delete FROM orgunitgroup;
 DELETE
-	from "public".dashboarditem
+	from dashboarditem
 WHERE
 	dashboarditem.reporttable IN (
 		SELECT
 			reporttable.reporttableid
 		FROM
-			"public".reporttable
+			reporttable
 		WHERE
 			userid > 100
 );
 DELETE
-	from "public".reporttable_filters
+	from reporttable_filters
 WHERE
 	reporttable_filters.reporttableid IN (
 		SELECT
 			reporttable.reporttableid
 		FROM
-			"public".reporttable
+			reporttable
 		WHERE
 			userid > 100
 );
 DELETE
-	from "public".reporttable_organisationunits
+	from reporttable_organisationunits
 WHERE
 	reporttable_organisationunits.reporttableid IN (
 		SELECT
 			reporttable.reporttableid
 		FROM
-			"public".reporttable
+			reporttable
 		WHERE
 			userid > 100
 );
 DELETE
-	from "public".reporttable_rows
+	from reporttable_rows
 WHERE
 	reporttable_rows.reporttableid IN (
 		SELECT
 			reporttable.reporttableid
 		FROM
-			"public".reporttable
+			reporttable
 		WHERE
 			userid > 100
 );
 DELETE
-	from "public".reporttable_columns
+	from reporttable_columns
 WHERE
 	reporttable_columns.reporttableid IN (
 		SELECT
 			reporttable.reporttableid
 		FROM
-			"public".reporttable
+			reporttable
 		WHERE
 			userid > 100
 );
 DELETE
-	from "public".reporttable_datadimensionitems
+	from reporttable_datadimensionitems
 WHERE
 	reporttable_datadimensionitems.reporttableid IN (
 		SELECT
 			reporttable.reporttableid
 		FROM
-			"public".reporttable
+			reporttable
 		WHERE
 			userid > 100
 );
 DELETE
-	from "public".reporttable_orgunitlevels
+	from reporttable_orgunitlevels
 WHERE
 	reporttable_orgunitlevels.reporttableid IN (
 		SELECT
 			reporttable.reporttableid
 		FROM
-			"public".reporttable
+			reporttable
 		WHERE
 			userid > 100
 );
 DELETE
-	from "public".reporttable_periods
+	from reporttable_periods
 WHERE
 	reporttable_periods.reporttableid IN (
 		SELECT
 			reporttable.reporttableid
 		FROM
-			"public".reporttable
+			reporttable
 		WHERE
 			userid > 100
 );
-delete FROM "public".reporttable where userid>100;
-delete FROM "public".userkeyjsonvalue where userid>100;
+delete FROM reporttable where userid>100;
+delete FROM userkeyjsonvalue where userid>100;
 DELETE
-	from "public".messageconversation_usermessages
+	from messageconversation_usermessages
 WHERE
 	messageconversation_usermessages.usermessageid IN (
 		SELECT
 			usermessage.usermessageid
 		FROM
-			"public".usermessage
+			usermessage
 		WHERE
 			userid > 100
 );
-delete FROM "public".usermessage where userid>100;
-delete FROM "public".dashboarditem_users where userid>100;
+delete FROM usermessage where userid>100;
+delete FROM dashboarditem_users where userid>100;
 
 update organisationunit set userid=50,lastupdatedby=50;
 update trackedentityinstance set lastupdatedby=50;
@@ -334,5 +246,5 @@ update validationrule set userid=50,lastupdatedby=50;
 
 delete FROM userteisearchorgunits where userinfoid>100;
 
-delete FROM "public".userinfo where userinfoid>100;
+delete FROM userinfo where userinfoid>100;
 
